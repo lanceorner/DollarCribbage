@@ -3,15 +3,21 @@ package net.orner.dollarcribbage.app;
 /**
  * Created by lance on 3/1/14.
  */
+
 public class CribbageCalc {
 
+    public static int MAX_HAND_LENGTH = 14;
+
     public boolean isValidHand (String handstring) {
+        int handlength = handstring.length();
+        if (handlength > MAX_HAND_LENGTH) {
+            return false;
+        }
+
         // String should be "[0-9]*" regex
 
         // Is there a regex class?
-
         boolean isValid = true;
-        int handlength = handstring.length();
         for (int i = 0; i < handlength; i++) {
             if (handstring.charAt(i) < '0' || handstring.charAt(i) > '9') {
                 isValid = false;
@@ -111,6 +117,8 @@ public class CribbageCalc {
         {
             // This can be done better
             // score = C(rank[rank_index], 2) * 2
+            // This could be done with a lookup table, or even a combination function,
+            //  but this will work for now.  Will not work for over 14 pairs.
             switch (ranks[rank_index]) {
                 case 2: score += 2;
                     break;
@@ -118,9 +126,25 @@ public class CribbageCalc {
                     break;
                 case 4: score += 12;
                     break;
-                case 5: score += 24;
+                case 5: score += 20;
                     break;
-                case 6: score += 48;
+                case 6: score += 30;
+                    break;
+                case 7: score += 42;
+                    break;
+                case 8: score += 56;
+                    break;
+                case 9: score += 72;
+                    break;
+                case 10: score += 90;
+                    break;
+                case 11: score += 110;
+                    break;
+                case 12: score += 132;
+                    break;
+                case 13: score += 156;
+                    break;
+                case 14: score += 182;
                     break;
                 default:
                     score += 0;
