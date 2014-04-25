@@ -50,7 +50,7 @@ public class CribbageCalc {
         {
             // There has got to be a more elegant way to do this.
             switch (handstring.charAt(i)) {
-                case '0': hand[i] = 0;
+                case '0': hand[i] = 10;
                     break;
                 case '1': hand[i] = 1;
                     break;
