@@ -109,47 +109,20 @@ public class CribbageCalc {
         {
             // Need a function to return an int for a face value
             int rank_value = hand[hand_index];
+            if (rank_value == 0)
+            {
+                rank_value = 10;  // Zero is a ten in this case
+            }
             ranks[rank_value]++;
         }
 
         // Search for pairs
         for (int rank_index = 1; rank_index <= 13; ++rank_index)
         {
-            // This can be done better
-            // score = C(rank[rank_index], 2) * 2
-            // This could be done with a lookup table, or even a combination function,
-            //  but this will work for now.  Will not work for over 14 pairs.
-            switch (ranks[rank_index]) {
-                case 2: score += 2;
-                    break;
-                case 3: score += 6;
-                    break;
-                case 4: score += 12;
-                    break;
-                case 5: score += 20;
-                    break;
-                case 6: score += 30;
-                    break;
-                case 7: score += 42;
-                    break;
-                case 8: score += 56;
-                    break;
-                case 9: score += 72;
-                    break;
-                case 10: score += 90;
-                    break;
-                case 11: score += 110;
-                    break;
-                case 12: score += 132;
-                    break;
-                case 13: score += 156;
-                    break;
-                case 14: score += 182;
-                    break;
-                default:
-                    score += 0;
-            }
-
+            // 2 cards = 2 points
+            // 3 cards = 6 points
+            // 4 cards = 12 points, ect.
+            score += ranks[rank_index] * (ranks[rank_index]-1);
         }
 
         // Score runs
@@ -173,7 +146,7 @@ public class CribbageCalc {
                         }
                         score += runScore;
                     }
-                    runStart = runStop + 1;
+                    runStart = runStop;
                 }
             }
         }
