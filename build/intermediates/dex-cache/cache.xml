@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/home/lance/github/DollarCribbage/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        revision="21.1.2"
+        sha1="3e9508f99d67288f94f9440ca86e2fb4995adf61">
+        <dex dex="/home/lance/github/DollarCribbage/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_8b6507dd938bcdb6e4e093fec2f97d34fb259a65/classes.dex" />
+    </item>
+    <item
+        jar="/home/lance/github/DollarCribbage/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="21.1.2"
+        sha1="cd7ff1b56708b2f6063dbde6b45e4efb780bcfee">
+        <dex dex="/home/lance/github/DollarCribbage/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_e5edb20ce4633d8c170bbfe630d947a321def49e/classes.dex" />
+    </item>
+
+</items>
