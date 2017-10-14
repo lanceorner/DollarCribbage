@@ -1,13 +1,14 @@
+import com.android.build.gradle.AppExtension
+
 apply plugin: 'com.android.application'
 
-android {
+def extension = android {
     signingConfigs {
     }
-    compileSdkVersion 24
-    buildToolsVersion '25.0.2'
+    compileSdkVersion 26
     defaultConfig {
         minSdkVersion 16
-        targetSdkVersion 24
+        targetSdkVersion 26
         versionCode 7
         versionName '1.2'
     }
@@ -25,7 +26,9 @@ android {
     }
     productFlavors {
     }
+    buildToolsVersion '26.0.2'
 }
+extension
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
