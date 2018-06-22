@@ -3,7 +3,6 @@ package net.orner.dollarcribbage.app
 import junit.framework.TestCase.*
 import org.junit.Test
 
-
 class CribbageCalcTest {
     @Test
     fun testWorks() {

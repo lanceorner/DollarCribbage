@@ -3,10 +3,12 @@ package net.orner.dollarcribbage.app
 /**
  * Created by lance on 3/1/14.
  */
+const val MAX_HAND_LENGTH = 14
 
+/**
+ * The main logic class to compute cribbage scores.
+ */
 class CribbageCalc {
-
-    val MAX_HAND_LENGTH = 14
 
     fun isValidHand(handstring: String): Boolean {
         val handlength = handstring.length
@@ -75,14 +77,14 @@ class CribbageCalc {
         val counts = intArrayOf(1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 
         for (hand_index in 0 until handsize) {
-            val face_value = hand[hand_index]
+            val faceValue = hand[hand_index]
 
-            if (face_value > 0) {
+            if (faceValue > 0) {
 
                 // Ways to make various sums WITHOUT the current card are already in the table.
                 // Add ways to make various sums WITH the current card.
-                for (count_index in 15 downTo face_value)
-                    counts[count_index] += counts[count_index - face_value]
+                for (count_index in 15 downTo faceValue)
+                    counts[count_index] += counts[count_index - faceValue]
             }
         }
 
@@ -93,11 +95,11 @@ class CribbageCalc {
         val ranks = intArrayOf(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
         for (hand_index in 0 until handsize) {
             // Need a function to return an int for a face value
-            var rank_value = hand[hand_index]
-            if (rank_value == 0) {
-                rank_value = 10  // Zero is a ten in this case
+            var rankValue = hand[hand_index]
+            if (rankValue == 0) {
+                rankValue = 10  // Zero is a ten in this case
             }
-            ranks[rank_value]++
+            ranks[rankValue]++
         }
 
         // Search for pairs
