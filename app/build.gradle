@@ -8,7 +8,7 @@ def extension = android {
     defaultConfig {
         minSdkVersion 24
         targetSdkVersion 28
-        versionCode 9
+        versionCode 10
         versionName '1.5'
     }
     buildTypes {
@@ -37,5 +37,5 @@ dependencies {
 }
 
 repositories {
-    mavenCentral()
+    jcenter()
 }
