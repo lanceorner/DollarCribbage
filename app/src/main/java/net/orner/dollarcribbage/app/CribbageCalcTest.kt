@@ -1,8 +1,8 @@
 package net.orner.dollarcribbage.app
 
-import org.jetbrains.annotations.TestOnly
-import org.junit.jupiter.api.Assertions.*
-import org.junit.jupiter.api.Test
+import junit.framework.TestCase.*
+import org.junit.Test
+
 
 class CribbageCalcTest {
     @Test
