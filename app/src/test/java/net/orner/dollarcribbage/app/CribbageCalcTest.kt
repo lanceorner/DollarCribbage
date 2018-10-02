@@ -1,14 +1,9 @@
 package net.orner.dollarcribbage.app
 
-import junit.framework.TestCase.*
-import org.junit.Test
+import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.Test
 
 class CribbageCalcTest {
-    @Test
-    fun testWorks() {
-        assertTrue(true)
-    }
-
     @Test
     fun basicScoreCall() {
         val calc = CribbageCalc()

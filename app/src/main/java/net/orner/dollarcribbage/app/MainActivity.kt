@@ -35,15 +35,15 @@ class MainActivity : Activity() {
 
     fun onClick(view: View) {
         val serialView = findViewById<View>(R.id.serialnumber) as TextView
-        val handstring = serialView.text.toString()
+        val handString = serialView.text.toString()
 
         val cribbageCalc = CribbageCalc()
-        if (!cribbageCalc.isValidHand(handstring)) {
+        if (!cribbageCalc.isValidHand(handString)) {
             Toast.makeText(this, "Invalid Serial Number", Toast.LENGTH_LONG).show()
             return
         }
 
-        val score = cribbageCalc.calcHand(handstring)
+        val score = cribbageCalc.calcHand(handString)
 
         val resultsView = findViewById<View>(R.id.textResults) as TextView
 

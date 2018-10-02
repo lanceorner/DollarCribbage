@@ -1,18 +1,14 @@
 package net.orner.dollarcribbage.app
 
 /**
- * Created by lance on 3/1/14.
- */
-const val MAX_HAND_LENGTH = 14
-
-/**
  * The main logic class to compute cribbage scores.
  */
 class CribbageCalc {
+    private val maxHandLength = 14
 
-    fun isValidHand(handstring: String): Boolean {
-        val handlength = handstring.length
-        if (handlength > MAX_HAND_LENGTH) {
+    fun isValidHand(handString: String): Boolean {
+        val handLength = handString.length
+        if (handLength > maxHandLength) {
             return false
         }
 
@@ -20,17 +16,17 @@ class CribbageCalc {
 
         // Is there a regex class?
         var isValid = true
-        for (i in 0 until handlength) {
-            if (handstring[i] < '0' || handstring[i] > '9') {
+        for (i in 0 until handLength) {
+            if (handString[i] < '0' || handString[i] > '9') {
                 isValid = false
             }
         }
         return isValid
     }
 
-    fun calcHand(handstring: String): Int {
-        // Break handstring into individual cards
-        val hand = parseHand(handstring)
+    fun calcHand(handString: String): Int {
+        // Break handString into individual cards
+        val hand = parseHand(handString)
 
         // Calc hand value
         val score: Int
@@ -40,16 +36,14 @@ class CribbageCalc {
         return score
     }
 
-    private fun parseHand(handstring: String): IntArray {
-        val handlength = handstring.length
-        var isError = false
+    private fun parseHand(handString: String): IntArray {
+        val handLength = handString.length
 
+        val hand = IntArray(handLength)
 
-        val hand = IntArray(handlength)
-
-        for (i in 0 until handlength) {
+        for (i in 0 until handLength) {
             // There has got to be a more elegant way to do this.
-            when (handstring[i]) {
+            when (handString[i]) {
                 '0' -> hand[i] = 10
                 '1' -> hand[i] = 1
                 '2' -> hand[i] = 2
@@ -60,7 +54,7 @@ class CribbageCalc {
                 '7' -> hand[i] = 7
                 '8' -> hand[i] = 8
                 '9' -> hand[i] = 9
-                else -> isError = true
+                else -> hand[i] = 0
             }
         }
         return hand
@@ -68,7 +62,7 @@ class CribbageCalc {
 
     private fun calcScore(hand: IntArray): Int {
         var score = 0
-        val handsize = hand.size
+        val handSize = hand.size
 
         // Score 15s
 
@@ -76,7 +70,7 @@ class CribbageCalc {
         // Number of ways that the cards can add up to each total 0 - 15
         val counts = intArrayOf(1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 
-        for (hand_index in 0 until handsize) {
+        for (hand_index in 0 until handSize) {
             val faceValue = hand[hand_index]
 
             if (faceValue > 0) {
@@ -93,7 +87,7 @@ class CribbageCalc {
 
         // Number of each rank
         val ranks = intArrayOf(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-        for (hand_index in 0 until handsize) {
+        for (hand_index in 0 until handSize) {
             // Need a function to return an int for a face value
             var rankValue = hand[hand_index]
             if (rankValue == 0) {
