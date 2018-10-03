@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Dollar Cribbage</string>
+    <string name="app_name">Dollar Cribbage Scorer</string>
     <string name="explanation">Dollar Cribbage will compute the cribbage score from a 10-digit serial number from a dollar bill.  Enter the serial number below.</string>
     <string name="action_settings">Settings</string>
     <string name="developer">Developed by Lance Orner (lance@orner.net) v1.6</string>
     <string name="score">Score = ?</string>
     <string name="compute_score">Compute Score</string>
     <string name="bill_serial_number">Bill Serial Number</string>
+    <string name="title_activity_main_list">MainList</string>
 
 </resources>
