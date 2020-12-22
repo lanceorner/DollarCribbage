@@ -8,8 +8,8 @@ def extension = android {
     defaultConfig {
         minSdkVersion 24
         targetSdkVersion 30
-        versionCode 10
-        versionName '1.5'
+        versionCode 11
+        versionName '1.6'
     }
     buildTypes {
         release {
@@ -19,10 +19,6 @@ def extension = android {
             */
         }
     }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_6
-        targetCompatibility JavaVersion.VERSION_1_6
-    }
     productFlavors {
     }
     buildToolsVersion '30.0.3'
@@ -30,7 +26,7 @@ def extension = android {
 extension
 
 dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
+//    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation group: 'junit', name: 'junit', version: '4.13.1'
     implementation 'com.android.support.constraint:constraint-layout:2.0.4'
